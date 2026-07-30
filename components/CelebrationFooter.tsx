@@ -110,13 +110,7 @@ export default function CelebrationFooter() {
       viewport={{ once: true, margin: "-80px" }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
-      <div className="flex items-center gap-3 mb-10">
-        <div className="section-divider flex-1" />
-        <span className="text-[10px] font-mono text-champagne/50 tracking-widest uppercase">
-          farewell
-        </span>
-        <div className="section-divider flex-1" />
-      </div>
+      
 
       <h2
         className="font-display italic font-bold gold-shimmer mb-6 leading-tight"
@@ -125,16 +119,12 @@ export default function CelebrationFooter() {
         Fly High, Parth.
       </h2>
 
-      <p className="text-white/45 font-body text-base leading-relaxed mb-5">
-        Senior developer. Junior gossip appreciator.
-        <br />
-        Full-stack legend. Forever our favourite.
-      </p>
+    
+
 
       <p className="text-dusty-rose/50 font-body text-sm leading-relaxed mb-12 max-w-sm mx-auto">
-        Thank you for the PRs, the patience, the perfectly timed dark humour,
-        and for always showing up — even when the build was broken and morale
-        was critically low.
+        Thank you for all the Drama, the fun, the perfectly timed dark humour,
+        and for always showing up. 
       </p>
 
       {/* Farewell code snippet */}
