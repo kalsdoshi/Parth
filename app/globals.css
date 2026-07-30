@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark-rose: #0b080e;
+  --rose-velvet: #1a0f1e;
+  --dusty-rose: #e8a2b8;
+  --champagne: #d4a853;
+  --champagne-light: #f0c97a;
+  --gold: #c9a84c;
+  --gold-light: #e8c96a;
+  --rose-glow: #c4637a;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(212, 168, 83, 0.18);
+  --glass-border-hover: rgba(212, 168, 83, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-rose);
+  color: #f5f0f8;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+}
+
+/* ==============================
+   SHIMMER / METALLIC TEXT
+   ============================== */
+.gold-shimmer {
+  background: linear-gradient(
+    120deg,
+    #b8860b 0%,
+    #d4a853 15%,
+    #f0c97a 30%,
+    #fff8dc 45%,
+    #f0c97a 60%,
+    #d4a853 75%,
+    #c9a84c 90%,
+    #b8860b 100%
+  );
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+.rose-shimmer {
+  background: linear-gradient(
+    120deg,
+    #a0405a 0%,
+    #c4637a 20%,
+    #e8a2b8 40%,
+    #ffd6e7 55%,
+    #e8a2b8 70%,
+    #c4637a 85%,
+    #a0405a 100%
+  );
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -300% center; }
+  100% { background-position: 300% center; }
+}
+
+/* ==============================
+   GLASSMORPHISM
+   ============================== */
+.glass-card {
+  background: rgba(20, 12, 28, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 168, 83, 0.18);
+  border-radius: 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 168, 83, 0.4);
+  box-shadow: 0 8px 40px rgba(196, 99, 122, 0.15), 0 0 0 1px rgba(212, 168, 83, 0.1);
+}
+
+.glass-card-rose {
+  background: rgba(28, 10, 20, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(232, 162, 184, 0.2);
+  border-radius: 20px;
+}
+
+/* ==============================
+   PORTRAIT FEATHER MASK
+   ============================== */
+.portrait-mask {
+  mask-image: radial-gradient(circle, black 45%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle, black 45%, transparent 80%);
+}
+
+/* ==============================
+   AMBIENT BACKGROUND ORBS
+   ============================== */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(196, 99, 122, 0.18) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  animation: floatOrb1 12s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(212, 168, 83, 0.12) 0%, transparent 70%);
+  bottom: 200px;
+  left: -100px;
+  animation: floatOrb2 15s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(100, 30, 80, 0.2) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: floatOrb3 10s ease-in-out infinite;
+}
+
+@keyframes floatOrb1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-30px, 40px) scale(1.1); }
+  66% { transform: translate(20px, -20px) scale(0.95); }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -60px) scale(1.15); }
+}
+
+@keyframes floatOrb3 {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.3); }
+}
+
+/* ==============================
+   FLOATING ANIMATION
+   ============================== */
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ==============================
+   TERMINAL STYLES
+   ============================== */
+.terminal-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.terminal-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(212, 168, 83, 0.3);
+  border-radius: 2px;
+}
+
+/* ==============================
+   CUSTOM SCROLLBAR
+   ============================== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b080e;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 168, 83, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 168, 83, 0.5);
+}
+
+/* ==============================
+   GOLD BORDER GLOW
+   ============================== */
+.gold-border-glow {
+  border: 1px solid rgba(212, 168, 83, 0.4);
+  box-shadow:
+    0 0 20px rgba(212, 168, 83, 0.15),
+    inset 0 0 20px rgba(212, 168, 83, 0.05);
+}
+
+/* ==============================
+   VIDEO FRAME
+   ============================== */
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 168, 83, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(212, 168, 83, 0.1),
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(212, 168, 83, 0.12);
+}
+
+/* ==============================
+   BADGE
+   ============================== */
+.badge-glow {
+  animation: badgePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(212, 168, 83, 0.4), 0 0 0 1px rgba(212, 168, 83, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(212, 168, 83, 0.7), 0 0 0 1px rgba(212, 168, 83, 0.5);
+  }
+}
+
+/* ==============================
+   CURSOR BLINK
+   ============================== */
+.cursor-blink::after {
+  content: '▋';
+  animation: cursorBlink 1s step-end infinite;
+  color: #10d9a4;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ==============================
+   MODAL OVERLAY
+   ============================== */
+.modal-overlay {
+  background: rgba(11, 8, 14, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ==============================
+   STICKY FOOTER BUTTON
+   ============================== */
+.love-btn {
+  background: linear-gradient(135deg, #c9a84c, #e8c96a, #c4637a, #c9a84c);
+  background-size: 300% 300%;
+  animation: gradientShift 4s ease infinite;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ==============================
+   TAG CHIP
+   ============================== */
+.tag-chip {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.7rem;
+  background: rgba(196, 99, 122, 0.15);
+  border: 1px solid rgba(232, 162, 184, 0.3);
+  color: #e8a2b8;
+  padding: 2px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+
+/* ==============================
+   SECTION DIVIDER
+   ============================== */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.3), transparent);
+}
+
+/* ==============================
+   QUOTE ICON GLOW
+   ============================== */
+.quote-glow {
+  filter: drop-shadow(0 0 12px rgba(212, 168, 83, 0.6));
+}
+
+/* ==============================
+   MOBILE CAROUSEL - hide scrollbar
+   ============================== */
+.snap-x {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.snap-x::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==============================
+   PORTRAIT CARD PHOTO
+   ============================== */
+.portrait-card-photo {
+  object-fit: cover;
+  object-position: top center;
+  width: 100%;
+  height: 100%;
+}
+
+/* ==============================
+   MOBILE SAFE AREA (iOS)
+   ============================== */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 1.5rem);
+  }
+}
+
+/* ==============================
+   TEAM CARD HOVER BORDER GLOW
+   ============================== */
+.team-card-glow {
+  transition: box-shadow 0.3s ease;
+}
+.team-card-glow:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+}
