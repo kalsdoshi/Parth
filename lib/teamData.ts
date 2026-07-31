@@ -37,7 +37,7 @@ export const teamMembers: TeamMember[] = [
     photoUrl: "/photos/muskan.png",
     accent: "#a78bfa",
     message:
-      "Update this with Muskan's message.",
+      "Bekaaaaaaaarrrrrr",
   },
 ];
 
