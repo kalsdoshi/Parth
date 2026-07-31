@@ -29,7 +29,7 @@ export const teamMembers: TeamMember[] = [
     photoUrl: "/photos/pritee.png",
     accent: "#d4a853",
     message:
-      "Update this with Pritee's message.",
+      "Parth, you have no fucking idea how my first four months of the year went. I just thought, you know, it’s just the beginning, and I’m going to have the worst crisis because the first four months gave me trauma. You have that thing in your mind. But bro, you came and made it so easy. I just… you made it so easy. I never thought I was going to have that much fun. And I hate to say this, but you’re the best thing that happened in 2026. I loved it, and I love you. Also, you’re gay, so because of that, I love you. ",
   },
   {
     id: "muskan",
